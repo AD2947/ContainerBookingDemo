@@ -1,0 +1,80 @@
+openapi: 3.0.0
+info:
+  title: Container Booking API
+  version: 1.0.0
+paths:
+  /api/bookings:
+    checkAvailability:
+      post:
+        summary: Check container availability
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContainerBookingRequest'
+        responses:
+          '200':
+            description: Container is available
+
+    bookContainer:
+      post:
+        summary: Book a container
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingRequest'
+        responses:
+          '200':
+            description: Booking created successfully
+
+    allBookings:
+      get:
+        summary: Get all bookings
+        parameters:
+          - name: size
+            in: query
+            required: true
+            schema:
+              type: string
+          - name: type
+            in: query
+            required: true
+            schema:
+              type: string
+        responses:
+          '200':
+            description: All bookings are returned
+
+    bookingsByType/{containerType}:
+      get:
+        summary: Get all bookings
+        parameters:
+          - name: containerType
+            in: path
+            required: true
+            schema:
+              type: string
+        responses:
+          '200':
+            description: All bookings are returned
+components:
+  schemas:
+    BookingRequest:
+      type: object
+      properties:
+        containerSize:
+          type: integer
+        containerType:
+          type: string
+          enum: [DRY, REEFER]
+        origin:
+          type: string
+        destination:
+          type: string
+        quantity:
+          type: integer
+        timestamp:
+          type: string

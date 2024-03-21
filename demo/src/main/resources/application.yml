@@ -1,0 +1,88 @@
+#spring:
+ # application:
+  #  name: demo
+  #mvc:
+   # static-path-pattern: /swagger*
+#swagger-ui:
+ #   path: /swagger-ui.html
+  #  enabled: true
+   # disable-swagger-default-url: true
+  #enable-native-support: true
+
+# swagger-ui custom path
+springdoc:
+  api-doc:
+    path: /api-docs
+  #swagger-ui:
+    #path: /swagger-ui.html
+   # show-actuator: true
+  #use-management-port: true
+  # This property enables the openapi and swagger-ui endpoints to be exposed beneath the actuator base path.
+#management:
+ # server:
+  #  port: 9090
+  #endpoints:
+   # web:
+    #  exposure:
+     #   include: openapi, swagger-ui
+
+
+mongodb:
+  port: 27017
+  dbname: dbdemo
+  host: localhost
+
+checkavailable:
+  uri: http://maersk:com/api/bookings/checkAvailable
+
+validation:
+  origin:
+    short: Origin is short
+    long: Origin is long
+  destination:
+    short: Destination is short
+    long: Destination is long
+  quantity:
+    minimum: Quantity is lesser than minimum
+    maximum: Quantity is more than maximum
+
+logging:
+  level:
+    root: DEBUG
+    org:
+      springframework:
+        security: DEBUG
+        #test:
+         # context:
+          #  cache: DEBUG
+
+
+server:
+  port: 8080
+  error:
+    include-message: always
+  servlet:
+   context-path: /demo
+
+
+#application:
+ # webAccess:
+  #  username: admin
+   # password: admin
+
+#springdoc:
+ # swagger-ui:
+  #  path: /api-docs/
+  #webjars:
+   # prefix: /ui
+
+#springdoc:
+ # swagger-ui:
+  #  path: /swagger-doc/swagger-ui.html
+  #api-docs:
+   # path: /swagger-doc/v3/api-docs
+
+#springdoc:
+ ## api-docs:
+   # path: /api-docs
+  #path: /swagger-ui-custom.html
