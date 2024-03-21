@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "32b47052-286f-4e0f-9ebf-9bf573218d34",
+		"name": "ContainerBookingSamplePayloads",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2796643"
+	},
+	"item": [
+		{
+			"name": "BookingContainer",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept-encoding": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"containerSize\": 20,\n    \"containerType\" : \"DRY\",\n    \"origin\" : \"Kerala\",\n    \"destination\" : \"Australia\",\n    \"quantity\" : 50,\n    \"timestamp\" : \"2021-10-12T13:53:09Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookings/bookContainer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings",
+						"bookContainer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all bookings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bookings/allBookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings",
+						"allBookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find container by container type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/bookings/bookingsByType/REEFER",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookings",
+						"bookingsByType",
+						"REEFER"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
