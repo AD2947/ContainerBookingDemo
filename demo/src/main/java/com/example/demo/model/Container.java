@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-//@Scope(scopeName = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,8 +19,6 @@ public class Container {
     private int id;
 
     @NotNull
-    //@Ignore can be used
-
     private Integer containerSize;
 
     @NotNull
